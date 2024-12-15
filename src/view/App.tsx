@@ -5,11 +5,13 @@ import { api } from '../enum/api'
 import { Student } from '../interface/Student'
 import { resp } from '../interface/resp'
 
+
 function App() {
 
   const [students, setStudents] = useState<Array<Student>>([])
 
   const cache = useRef<boolean>(false)
+
 
   useEffect(() => {
     /**
@@ -25,7 +27,7 @@ function App() {
     }
   }, [])
 
-  const studentList = students ? students.map((student: Student) => {
+  const studentslist = students ? students.map((student: Student) => {
     return (
       <div className='student' key={student._id}>
         <p>帳號: {student.userName}</p>
@@ -43,7 +45,7 @@ function App() {
   return (
     <>
       <div className="container">
-        {studentList}
+        {studentslist}
       </div>
     </>
   )
